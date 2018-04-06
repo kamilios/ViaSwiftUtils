@@ -34,7 +34,7 @@ infix operator !!
 /// [chapter 'When to Force Unwrap' from Advanced Swift](https://www.objc.io/books/advanced-swift/)
 
 public func !! <T>(wrapped: T?, failureText: @autoclosure () -> String) -> T {
-    if let x = wrapped { return x }
+    if let xValue = wrapped { return xValue }
     fatalError(failureText ())
 }
 

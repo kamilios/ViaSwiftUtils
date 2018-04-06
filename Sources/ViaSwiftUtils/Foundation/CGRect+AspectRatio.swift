@@ -35,11 +35,11 @@ public extension CGRect {
     /// - returns: A new CGRect that represents the linear combination
     func linearCombined(with otherRect: CGRect, by value: CGFloat) -> CGRect {
         let minMaxValue = min(1.0, max(0.0, value))
-        let x = (1 - minMaxValue) * self.origin.x + minMaxValue * otherRect.origin.x
-        let y = (1 - minMaxValue) * self.origin.y + minMaxValue * otherRect.origin.y
+        let xValue = (1 - minMaxValue) * self.origin.x + minMaxValue * otherRect.origin.x
+        let yValue = (1 - minMaxValue) * self.origin.y + minMaxValue * otherRect.origin.y
         let width = (1 - minMaxValue) * self.size.width + minMaxValue * otherRect.size.width
         let height = (1 - minMaxValue) * self.size.height + minMaxValue * otherRect.size.height
         
-        return CGRect(origin: CGPoint(x: x, y: y), size: CGSize(width: width, height: height))
+        return CGRect(origin: CGPoint(x: xValue, y: yValue), size: CGSize(width: width, height: height))
     }
 }

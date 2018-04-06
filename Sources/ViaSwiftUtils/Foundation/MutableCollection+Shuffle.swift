@@ -24,10 +24,10 @@ public extension MutableCollection where Index == Int {
     mutating func shuffleInPlace() {
         if count <= 1 { return }
         
-        for i in indices.dropLast() {
-            let j = (i..<endIndex).arc4random
-            if i == j { continue }
-            self.swapAt(i, j)
+        for index in indices.dropLast() {
+            let jValue = (index..<endIndex).arc4random
+            if index == jValue { continue }
+            self.swapAt(index, jValue)
         }
     }
 }
